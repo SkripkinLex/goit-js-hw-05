@@ -1,5 +1,8 @@
 const sortByDescendingFriendCount = (users) => {
-  return users.sort((a, b) => b.friends.length - a.friends.length);
+  return users
+    .slice() // створюємо копію масиву, щоб уникнути зміни вихідного масиву
+    .sort((a, b) => b.friends.length - a.friends.length)
+    .toSorted(); // додано метод toSorted()
 };
 
 console.log(
